@@ -94,6 +94,9 @@
     &.findbar-highlight {
       margin-left: 8px !important;
     }
+    .split-view-panel .findbar-container > &:not([hidden]) {
+      display: flex !important;
+    }
   }
   .checkbox-check,
   .checkbox-label,
