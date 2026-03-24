@@ -181,6 +181,10 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
   #tabbrowser-tabs[orient="vertical"]:not([expanded]) & .tab-close-button {
     top: 1px !important;
     left: 7px !important;
+
+    tab-split-view-wrapper & {
+      left: 1px !important;
+    }
   }
   &:not(:hover) .tab-close-button {
     display: none !important;
@@ -251,6 +255,50 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
   height: 1px !important;
 }
 
+/* tabs: split view */
+tab-split-view-wrapper {
+  margin-inline: var(--tab-overflow-clip-margin) !important;
+  margin-block: var(--tab-block-margin);
+  padding: 0 !important;
+  gap: 3px !important;
+  transition: max-height var(--pf-ts-15), opacity var(--pf-ts-15);
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: calc(var(--tab-min-height) - var(--icon-size));
+    position: absolute;
+    left: calc(50% - 1px);
+    top: calc(var(--icon-size) / 2);
+    background-color: var(--pf-border-color);
+  }
+  #tabbrowser-tabs[orient="vertical"] & {
+    margin-inline: var(--pf-separation) !important;
+  }
+  @media not -moz-pref("sidebar.visibility", "hide-sidebar") {
+    #tabbrowser-tabs[orient="vertical"]:not([expanded]) &::before {
+      width: calc(var(--tab-min-height) - var(--icon-size));
+      height: 1px;
+      left: unset;
+      top: calc(50% - 1px);
+      transform: translateX(calc(var(--icon-size) / 2));
+    }
+  }
+  &[hasactivetab] {
+    box-shadow: var(--pf-tab-selected-shadow);
+    --tab-hover-background-color: var(--pf-tab-selected-bgcolor);
+  }
+  .tab-background {
+    min-height: var(--tab-min-height) !important;
+    background-color: transparent !important;
+    --tab-hover-background-color: transparent;
+    --tab-selected-shadow: none;
+  }
+  .tabbrowser-tab {
+    border: 0 !important;
+  }
+}
+
 /* tabs: groups */
 #tabbrowser-tabs[orient="vertical"] {
   tab-group {
@@ -284,6 +332,10 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
         transition: transform var(--pf-ts-15);
       }
     }
+    tab-split-view-wrapper {
+      max-height: calc((var(--tab-min-height) + var(--tab-block-margin)) * 2);
+      margin-left: calc(var(--pf-tab-group-indent-1, 0px) + var(--pf-separation)) !important;
+    }
     &[collapsed] > .tabbrowser-tab:not([selected]) {
       display: unset !important;
       pointer-events: none;
@@ -292,6 +344,15 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
         max-height: 0;
         opacity: 0;
       }
+    }
+    &[collapsed] > tab-split-view-wrapper:not([hasactivetab]) {
+      display: grid !important;
+      pointer-events: none;
+      max-height: 0;
+      opacity: 0;
+      margin: 0;
+
+      & > .tab-stack { opacity: 1; }
     }
   }
   #sidebar-main[hidden] &,
@@ -311,12 +372,15 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
         transition: margin-inline var(--pf-ts-15) !important;
       }
     }
+    &[movingtab]:is([movingtab-addToGroup], [movingtab-ungroup]) tab-split-view-wrapper[hasactivetab] > .tabbrowser-tab {
+      --pf-tab-group-indent-1: 0;
+    }
   }
   .tab-group-label-container {
     margin: var(--tab-block-margin) var(--tab-inner-inline-margin) !important;
     padding-block-end: 0 !important;
 
-    #tabbrowser-tabs[orient="vertical"] tab-group:not([collapsed]) > &::after {
+    #tabbrowser-tabs[orient="vertical"] tab-group > &::after {
       inset-inline-start: calc(var(--tab-group-line-thickness) - var(--tab-inner-inline-margin)) !important;
     }
   }
@@ -390,11 +454,15 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
       fill-opacity: 1;
     }
   }
+  tab-split-view-wrapper .tab-group-line {
+    --space-medium: 8px;
+  }
 }
 #tabbrowser-tabs[orient="horizontal"] {
   tab-group {
-    --tab-group-line-color: color-mix(in srgb, light-dark(var(--tab-group-color), var(--tab-group-color-invert)), transparent 60%) !important;
+    --tab-group-line-color: light-dark(var(--tab-group-color), var(--tab-group-color-invert)) !important;
     --tab-group-line-thickness: 1px;
+    --tab-group-line-toolbar-border-distance: 3px;
   }
   .tab-group-label-hover-highlight {
     --tab-hover-background-color: transparent;
@@ -411,6 +479,12 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
     &:hover {
       background-color: color-mix(in srgb, light-dark(var(--tab-group-color), var(--tab-group-color-invert)), transparent 80%) !important;
     }
+  }
+  .tab-group-line {
+    --dragover-tab-group-color: var(--tab-group-line-color);
+  }
+  tab-split-view-wrapper .tab-group-line {
+    inset-block-end: calc((var(--tab-block-margin) / 2) * -1) !important;
   }
 }
 .tab-group-overflow-count-container {
