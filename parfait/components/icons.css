@@ -152,9 +152,10 @@
 }
 
 /* icons: urlbar */
+#trust-icon-container.insecure,
 #identity-box[pageproxystate="valid"]:is(.notSecure, .mixedActiveContent, .httpsOnlyErrorPage) #identity-icon {
   list-style-image: url("chrome://devtools/skin/images/alert.svg") !important;
-  fill: light-dark(var(--color-red-50), var(--color-red-30));
+  fill: light-dark(var(--color-red-50), var(--color-red-30)) !important;
 }
 #permissions-granted-icon {
   list-style-image: var(--pf-icon-permissions) !important;

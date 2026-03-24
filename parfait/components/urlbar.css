@@ -58,7 +58,7 @@
 
     /* urlbar items */
     #userContext-label,
-    #trust-icon-container:not([open]),
+    #trust-icon-container:not([open], .insecure),
     #identity-box:not([pageproxystate="invalid"]):not(.notSecure) #identity-icon-box:not([open]),
     #tracking-protection-icon-container:not([open]) {
       max-width: 0 !important;
@@ -183,6 +183,7 @@
   }
   #translations-button-locale,
   #identity-icon-label,
+  #trust-label,
   #urlbar-label-box,
   #identity-permission-box > #blocked-permissions-container {
     display: none;
