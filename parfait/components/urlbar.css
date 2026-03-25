@@ -192,6 +192,9 @@
   .urlbar-input-box {
     --identity-box-margin-inline: 0;
   }
+  #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button {
+    padding-inline: var(--urlbar-icon-padding) !important;
+  }
   /* fu: urlbar skeleton */
   @media -moz-pref("sidebar.verticalTabs") and -moz-pref("parfait.toolbar.unified-sidebar") {
     &:has(#urlbar[open]) #vertical-spacer::after {
