@@ -50,6 +50,8 @@
   --pf-icon-color: var(--toolbarbutton-icon-fill);
   --pf-sidebar-bgcolor-1: var(--toolbox-bgcolor);
   --pf-sidebar-bgcolor-2: var(--toolbox-bgcolor);
+  --pf-split-border-color: var(--lwt-tab-line-color, var(--pf-accent-color));
+  --focus-outline-color: var(--toolbar-field-focus-border-color) !important;
 
   .browser-toolbox-background {
     background-color: var(--lwt-accent-color);
@@ -144,7 +146,7 @@
         transition: background-color var(--pf-ts-15);
       }
       &:not(.deck-selected) > .browserContainer { outline: none !important; }
-      &.deck-selected > .browserContainer { outline-color: var(--pf-accent-color) !important; }
+      &.deck-selected > .browserContainer { outline-color: var(--pf-split-border-color, var(--pf-accent-color)) !important; }
     }
     &:has(.split-view-splitter:hover) {
       --pf-split-indicator-bg: light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.175));

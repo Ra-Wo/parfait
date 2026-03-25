@@ -196,4 +196,5 @@
 }
 .tab-note-icon-overlay {
   list-style-image: var(--pf-icon-note-12) !important;
+  --icon-color: currentColor;
 }

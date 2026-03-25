@@ -219,7 +219,6 @@
   --sidebar-border-color: transparent !important;
   --background-color-overlay: transparent !important;
   --background-color-canvas: var(--pf-panel-bgcolor) !important;
-  --focus-outline-color: color-mix(in srgb, var(--pf-accent-color), transparent 40%) !important;
   --urlbar-box-bgcolor: transparent !important;
   --urlbar-box-focus-bgcolor: transparent !important;
   --urlbarView-separator-color: light-dark(rgba(0, 0, 0, 0.075), rgba(255, 255, 255, 0.1)) !important;
@@ -244,6 +243,7 @@
     --button-text-color-primary: var(--color-white) !important;
     --link-color: var(--pf-accent-text-color) !important;
     --tab-loading-fill: var(--pf-accent-text-color) !important;
+    --focus-outline-color: color-mix(in srgb, var(--pf-accent-color), transparent 40%) !important;
     --toolbarbutton-icon-fill: var(--pf-icon-color) !important;
     --toolbarbutton-icon-fill-attention: var(--pf-accent-text-color) !important;
   }
