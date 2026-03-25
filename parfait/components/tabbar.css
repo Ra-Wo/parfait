@@ -490,3 +490,9 @@ tab-split-view-wrapper {
 .tab-group-overflow-count-container {
   display: none !important;
 }
+
+/* tabs: notes */
+#tabbrowser-tabs:is([orient="horizontal"], [expanded]) .tabbrowser-tab[tab-note]:not([pinned]) .tab-note-icon-overlay {
+  display: revert !important;
+}
+.tab-note-icon { display: none; }
