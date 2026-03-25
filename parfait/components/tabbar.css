@@ -261,7 +261,7 @@ tab-split-view-wrapper {
   margin-block: var(--tab-block-margin);
   padding: 0 !important;
   gap: 3px !important;
-  transition: max-height var(--pf-ts-15), opacity var(--pf-ts-15);
+  transition: max-height var(--pf-ts-15), opacity var(--pf-ts-15), margin-left var(--pf-ts-15);
 
   &::before {
     content: "";
@@ -334,7 +334,7 @@ tab-split-view-wrapper {
     }
     tab-split-view-wrapper {
       max-height: calc((var(--tab-min-height) * 2) + 3px);
-      margin-left: calc(var(--pf-tab-group-indent-1, 0px) + var(--pf-separation)) !important;
+      margin-inline-start: calc(var(--pf-tab-group-indent-1, 0px) + var(--pf-separation)) !important;
     }
     &[collapsed] > .tabbrowser-tab:not([selected]) {
       display: unset !important;
@@ -455,6 +455,7 @@ tab-split-view-wrapper {
     }
   }
   tab-split-view-wrapper .tab-group-line {
+    --space-xsmall: 4px;
     --space-medium: 8px;
   }
 }
