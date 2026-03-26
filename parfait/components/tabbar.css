@@ -154,6 +154,9 @@ spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
   &[muted] {
     background-image: var(--pf-icon-audio-mute-12);
   }
+  &[activemedia-blocked] {
+    background-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-circle-12.svg");
+  }
 }
 .tab-icon-overlay[soundplaying] {
   list-style-image: var(--pf-icon-audio-12) !important;
