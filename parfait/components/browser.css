@@ -18,8 +18,8 @@
   @media -moz-pref("parfait.bg.accent-color") {
     --toolbox-bgcolor: color-mix(in oklab, transparent, var(--pf-browser-bgcolor) var(--pf-browser-opacity)) !important;
     --toolbox-bgcolor-inactive: color-mix(in oklab, var(--pf-browser-bgcolor), var(--color-gray-50) 30%) !important;
-    --pf-sidebar-bgcolor-1: var(--pf-browser-bgcolor);
-    --pf-sidebar-bgcolor-2: var(--pf-browser-bgcolor);
+    --tabpanel-background-color: color-mix(in oklab, var(--pf-browser-bgcolor), light-dark(#fff, #000)) !important;
+    --pf-sidebar-bgcolor: var(--pf-browser-bgcolor);
 
     @media -moz-pref("parfait.bg.gradient") {
       --pf-bg-gradient-fade: color-mix(in oklab, var(--pf-browser-bgcolor), var(--pf-browser-bgcolor-mix) 50%);
@@ -48,8 +48,7 @@
 :root[lwtheme] {
   --pf-text-color: var(--lwt-text-color);
   --pf-icon-color: var(--toolbarbutton-icon-fill);
-  --pf-sidebar-bgcolor-1: var(--toolbox-bgcolor);
-  --pf-sidebar-bgcolor-2: var(--toolbox-bgcolor);
+  --pf-sidebar-bgcolor: var(--toolbox-bgcolor);
   --pf-split-border-color: var(--lwt-tab-line-color, var(--pf-accent-color));
   --focus-outline-color: var(--toolbar-field-focus-border-color) !important;
 

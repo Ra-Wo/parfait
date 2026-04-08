@@ -242,7 +242,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       width: var(--pf-sidebar-width);
       height: calc(100% - var(--pf-navbar-height));
       padding-top: var(--pf-separation);
-      background: var(--pf-sidebar-bgcolor-1);
+      background: var(--pf-sidebar-bgcolor-1, var(--pf-sidebar-bgcolor));
       border-radius: var(--pf-browser-radius);
       box-shadow: var(--pf-fl-sidebar-shadow);
       transition-property: left, box-shadow;
@@ -251,15 +251,15 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
 
       /* fs: options */
       @media -moz-pref("parfait.bg.accent-color") {
-        --pf-sidebar-bgcolor-1: var(--pf-browser-bgcolor);
+        --pf-sidebar-bgcolor: var(--pf-browser-bgcolor);
 
         @media -moz-pref("parfait.bg.gradient") {
-          --pf-sidebar-bgcolor-1: linear-gradient(var(--pf-bg-gradient-fade), var(--pf-browser-bgcolor));
+          --pf-sidebar-bgcolor: linear-gradient(var(--pf-bg-gradient-fade), var(--pf-browser-bgcolor));
         }
       }
       @media -moz-pref("parfait.blur.enabled") {
         backdrop-filter: var(--pf-acrylic-filter);
-        --pf-sidebar-bgcolor-1: color-mix(in srgb, var(--pf-sidebar-bgcolor-2), transparent 12%);
+        --pf-sidebar-bgcolor-1: color-mix(in srgb, var(--pf-sidebar-bgcolor), transparent 12%);
 
         @media -moz-pref("parfait.bg.accent-color") and -moz-pref("parfait.bg.gradient") {
           --pf-sidebar-bgcolor-1: linear-gradient(color-mix(in srgb, var(--pf-bg-gradient-fade), transparent 20%), color-mix(in srgb, var(--pf-browser-bgcolor), transparent 20%));
