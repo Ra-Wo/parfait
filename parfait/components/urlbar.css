@@ -59,10 +59,7 @@
     #trust-icon-container:not([open], .insecure),
     #identity-box:not([pageproxystate="invalid"]):not(.notSecure) #identity-icon-box:not([open]),
     #tracking-protection-icon-container:not([open]) {
-      max-width: 0 !important;
-      margin-inline: 0 !important;
-      padding-inline: 0 !important;
-      overflow: hidden;
+      visibility: collapse;
     }
     /* page actions */
     .urlbar-page-action:not([open], [translationsactive]) {
@@ -202,6 +199,7 @@
       border: 1px dashed var(--pf-toolbar-bgcolor-active);
       border-radius: var(--pf-border-radius-md);
       box-sizing: border-box;
+      z-index: 1;
     }
   }
   @media -moz-pref("sidebar.verticalTabs", false) or (not -moz-pref("sidebar.visibility", "hide-sidebar")) {
