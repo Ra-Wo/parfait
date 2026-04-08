@@ -29,6 +29,9 @@
       margin-left: var(--pf-toolbaritem-gap);
       padding-block: var(--pf-navbar-padding-block);
     }
+    .tab-content {
+      padding-inline: var(--tab-inline-padding) !important;
+    }
   }
   /* tabs: vertical layout */
   &[orient="vertical"] {
@@ -80,11 +83,10 @@
 }
 /* tabs: overflow */
 spacer:is([part="overflow-start-indicator"], [part="overflow-end-indicator"]) {
-  border-inline: 0 !important;
+  background-image: none !important;
 }
 @media -moz-pref("sidebar.verticalTabs") {
   spacer[part="overflow-start-indicator"] {
-    background-image: none !important;
     border-top: 1px solid var(--pf-border-color-light);
   }
   spacer[part="overflow-end-indicator"],
@@ -477,7 +479,7 @@ tab-split-view-wrapper {
     outline: none !important;
     transition: all var(--pf-ts-15) !important;
     --tab-border-radius: var(--pf-border-radius-hl);
-    --tab-group-label-padding: 10px;
+    --tab-group-label-padding: var(--tab-inline-padding);
     --tab-group-label-height: calc(var(--tab-min-height) - var(--pf-navbar-padding-block));
 
     &:hover {

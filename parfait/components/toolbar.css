@@ -219,7 +219,8 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
     #urlbar-container + toolbarspring + #downloads-button {
       margin-right: calc(var(--pf-separation) - var(--pf-toolbaritem-gap)) !important;
     }
-    &:not([customizing]) :is(.titlebar-spacer, toolbarspring) {
+    .titlebar-spacer,
+    &:not([customizing]) toolbarspring {
       display: none;
     }
     :is(toolbarbutton, toolbarpaletteitem) ~ #tabbrowser-tabs {
@@ -286,6 +287,12 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
       #TabsToolbar-customization-target { visibility: collapse; }
     }
+  }
+  #scrollbutton-up:not([disabled]) {
+    border-right: 1px solid var(--pf-border-color-light) !important;
+  }
+  #scrollbutton-down:not([disabled]) {
+    border-left: 1px solid var(--pf-border-color-light) !important;
   }
 }
 
