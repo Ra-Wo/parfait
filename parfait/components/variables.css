@@ -27,7 +27,7 @@
   --pf-findbar-width: 320px;
   --pf-extensions-width: 228px;
   --pf-tab-group-preview-width: 260px;
-  --pf-wc-gap: 0px;
+  --pf-wc-width: 0px;
 
   /* corner radii */
   --pf-border-radius-md: 12px;
@@ -169,7 +169,7 @@
 
   /* csd */
   @media (-moz-platform: windows) and (not -moz-pref("parfait.traffic-lights.enabled")) {
-    --pf-wc-gap: 138px;
+    --pf-wc-width: 138px;
   }
   @media -moz-pref("parfait.traffic-lights.enabled") {
     --pf-tl-margin: 0px;

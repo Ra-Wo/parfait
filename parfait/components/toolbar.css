@@ -238,14 +238,14 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
     }
     @media -moz-pref("parfait.traffic-lights.enabled") or -moz-pref("parfait.toolbar.force-hl-layout") or (not (-moz-platform: linux)) {
       --pf-tabbar-margin: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-navbar-items, 2) + var(--pf-separation));
-      --pf-extensions-x: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-extensions-multi, 1) + var(--pf-separation) + var(--pf-wc-gap));
+      --pf-extensions-x: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-extensions-multi, 1) + var(--pf-separation) + var(--pf-wc-width));
 
       #TabsToolbar > .toolbar-items {
         margin-right: var(--pf-tabbar-margin) !important;
       }
       #PanelUI-button {
         position: fixed;
-        right: var(--pf-wc-gap);
+        right: var(--pf-wc-width);
       }
       &:not([customizing]) #unified-extensions-button,
       #wrapper-unified-extensions-button {
@@ -254,7 +254,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
       }
       #nav-bar-overflow-button {
         position: fixed;
-        right: calc(var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap) + var(--pf-separation) + var(--pf-wc-gap));
+        right: calc(var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap) + var(--pf-separation) + var(--pf-wc-width));
       }
       &:has(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) #unified-extensions-button[hidden]) {
         --pf-navbar-items: 1;
