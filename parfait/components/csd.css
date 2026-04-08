@@ -27,7 +27,7 @@
     height: var(--pf-tl-size);
     padding: 0 !important;
     background-color: var(--pf-tl-button-color) !important;
-    box-shadow: inset 0 0 0 1px var(--pf-tl-border) !important;
+    box-shadow: inset 0 0 0 0.5px var(--pf-tl-border) !important;
     border-radius: 50%;
 
     &.titlebar-close {
@@ -52,7 +52,7 @@
       --pf-tl-button-icon: var(--pf-tl-restore-icon);
     }
     &:hover {
-      filter: brightness(0.9);
+      filter: brightness(0.9175);
     }
     &::before {
       content: "" !important;
