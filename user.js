@@ -15,6 +15,7 @@ user_pref("sidebar.position_start", true);
 /* general */
 user_pref("parfait.animations.enabled", true);
 user_pref("parfait.blur.enabled", false);
+user_pref("parfait.theme.roundness.preset", 0);
 user_pref("parfait.window.borderless", false);
 
 /* background */
@@ -32,7 +33,6 @@ user_pref("parfait.sidebar.width.preset", 2);
 
 /* theme */
 user_pref("parfait.theme.lwt.alt", false);
-user_pref("parfait.theme.roundness.preset", 1);
 
 /* toolbar */
 user_pref("parfait.toolbar.sidebar-gutter", true);
