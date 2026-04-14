@@ -113,7 +113,7 @@
     padding-inline: 0 !important;
     --sidebar-box-background: var(--pf-toolbar-bgcolor);
     --sidebar-box-border: none;
-    --panel-separator-color: light-dark(white, black);
+    --panel-separator-color: light-dark(#fff, #000);
   }
   .customize-extensions-heading,
   legend[part="label"] {

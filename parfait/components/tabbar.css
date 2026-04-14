@@ -310,14 +310,14 @@ tab-split-view-wrapper {
     /* tg: colors */
     --pf-folder-color-1: var(--toolbar-bgcolor);
     --pf-folder-color-2: color-mix(in srgb, var(--toolbar-color), var(--toolbar-bgcolor) 50%);
-    --pf-folder-color-bg: color-mix(in srgb, var(--pf-folder-color-1), light-dark(white, black) 95%);
-    --pf-folder-color-fg: color-mix(in srgb, var(--pf-folder-color-2), light-dark(black, white) 40%);
+    --pf-folder-color-bg: color-mix(in srgb, var(--pf-folder-color-1), light-dark(#fff, #000) 95%);
+    --pf-folder-color-fg: color-mix(in srgb, var(--pf-folder-color-2), light-dark(#000, #fff) 40%);
     --tab-group-line-color: color-mix(in srgb, var(--toolbar-color), var(--toolbar-bgcolor) 50%) !important;
 
     @media -moz-pref("parfait.bg.accent-color") {
       --tab-group-line-color: color-mix(in srgb, var(--pf-accent-color), var(--toolbar-color) 30%) !important;
       --pf-folder-color-1: var(--pf-accent-color);
-      --pf-folder-color-2: light-dark(var(--pf-accent-color), color-mix(in srgb, var(--pf-accent-color), white 60%));
+      --pf-folder-color-2: light-dark(var(--pf-accent-color), color-mix(in srgb, var(--pf-accent-color), #fff 60%));
     }
     @media -moz-pref("parfait.tabs.groups.color") {
       --tab-group-line-color:  var(--tab-group-color) !important;
@@ -363,7 +363,7 @@ tab-split-view-wrapper {
   #sidebar-main[hidden] &,
   &[expanded] {
     --pf-tab-group-padding-right: var(--tab-inner-inline-margin);
-    --pf-tab-group-overflow-mask: linear-gradient(to left, transparent, black 1em);
+    --pf-tab-group-overflow-mask: linear-gradient(to left, transparent, #000 1em);
     --pf-tab-group-indent-1: var(--pf-tab-group-indent);
     --tab-group-line-thickness: 0;
 

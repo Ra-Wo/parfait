@@ -17,8 +17,8 @@
     --newtab-overlay-color: rgba(21, 21, 21, 0.5) !important;
     --text-color-deemphasized: color-mix(in srgb, currentColor, transparent 55%) !important;
     --color-accent-primary: var(--pf-accent-color) !important;
-    --color-accent-primary-hover: color-mix(in srgb, var(--pf-accent-color), black 10%) !important;
-    --color-accent-primary-active: color-mix(in srgb, var(--pf-accent-color), black 20%) !important;
+    --color-accent-primary-hover: color-mix(in srgb, var(--pf-accent-color), #000 10%) !important;
+    --color-accent-primary-active: color-mix(in srgb, var(--pf-accent-color), #000 20%) !important;
     --border-color: var(--pf-border-color) !important;
     --border-color-interactive: var(--pf-border-color) !important;
     --border-radius-small: 8px !important;
