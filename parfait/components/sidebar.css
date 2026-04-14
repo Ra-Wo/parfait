@@ -405,7 +405,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     }
     /* fus: floating navbar hover */
     &:not(:has(:is(#sidebar-button, #back-button, #forward-button, #stop-reload-button, #vertical-spacer, #urlbar):hover
-    )):has(#nav-bar:hover, #nav-bar toolbarbutton[open], #downloads-button[notification]:not([hidden])) {
+    )):has(#nav-bar:hover, #nav-bar toolbarbutton:not(#urlbar-searchmode-switcher)[open], #downloads-button[notification]:not([hidden])) {
       --pf-fl-navbar-y: 0;
       --pf-navbar-delay: 0s;
     }
@@ -463,7 +463,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     }
     /* fus: hover state */
     &:has(:is(#vertical-spacer, #sidebar-button, #back-button, #forward-button, #stop-reload-button, #backForwardMenu):hover,
-    #urlbar:not([open]) :is(:hover, :is(#tracking-protection-icon-container, .identity-box-button, .urlbar-page-action, #notification-popup-box)[open])) {
+    #urlbar:not([open]) :is(:hover, :is(#tracking-protection-icon-container, .identity-box-button, .urlbar-page-action, #notification-popup-box, #urlbar-searchmode-switcher)[open])) {
       --pf-fl-hover: 1;
     }
   }
