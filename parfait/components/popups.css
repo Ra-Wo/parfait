@@ -440,6 +440,8 @@ panel toolbarseparator {
     }
     @media not -moz-pref("parfait.tabs.groups.color") {
       --menuitem-icon-fill: var(--toolbar-color) !important;
+
+      &:where([_moz-menuactive]:not([disabled="true"])) { --menuitem-icon-fill: #fff !important; }
     }
   }
 }
