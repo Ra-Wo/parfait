@@ -277,7 +277,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       &::before { left: calc(0px - var(--pf-fl-trigger-width)); }
       &::after { right: calc(0px - var(--pf-fl-trigger-width)); }
     }
-    &:has(#sidebar-main:hover, .tabbrowser-tab[multiselected]:not([selected]), #tabContextMenu:hover, :is(.tab-group-editor-panel, #tabgroup-preview-panel)[panelopen="true"]) {
+    &:has(#sidebar-main:hover, .tabbrowser-tab[multiselected]:not([selected]), #tabContextMenu:hover, :is(.tab-group-editor-panel, #tabgroup-preview-panel[animate="open"])[panelopen="true"]) {
       --pf-fl-hover: 1;
     }
     /* fs: separation */
