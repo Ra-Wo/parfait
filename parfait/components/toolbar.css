@@ -189,7 +189,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 /* horizontal layout */
 @media not -moz-pref("sidebar.verticalTabs") {
   :root:not([chromehidden~="toolbar"], [taskbartab]) {
-    --pf-tabbar-margin: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-navbar-items, 2) + var(--pf-separation) + var(--pf-wc-width));
+    --pf-tabbar-margin: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-navbar-items, 2) + var(--pf-separation) + var(--pf-wc-linux, 0px));
     --pf-extensions-x: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-extensions-multi, 1) + var(--pf-separation) + var(--pf-wc-width));
 
     #navigator-toolbox {
@@ -233,6 +233,8 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
     }
     /* linux moment */
     @media (-moz-platform: linux) and (not (-moz-gtk-csd-reversed-placement)) and (not -moz-pref("parfait.traffic-lights.enabled")) {
+      --pf-wc-linux: var(--pf-wc-width);
+
       #TabsToolbar > .titlebar-buttonbox-container {
         position: absolute;
         right: 0;
