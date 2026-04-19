@@ -189,6 +189,9 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 /* horizontal layout */
 @media not -moz-pref("sidebar.verticalTabs") {
   :root:not([chromehidden~="toolbar"], [taskbartab]) {
+    --pf-tabbar-margin: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-navbar-items, 2) + var(--pf-separation) + var(--pf-wc-width));
+    --pf-extensions-x: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-extensions-multi, 1) + var(--pf-separation) + var(--pf-wc-width));
+
     #navigator-toolbox {
       display: grid;
       grid-template-columns: max-content 1fr;
@@ -228,8 +231,16 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
       padding-inline-start: 0 !important;
       margin-inline-start: 0 !important;
     }
+    /* linux moment */
+    @media (-moz-platform: linux) and (not (-moz-gtk-csd-reversed-placement)) and (not -moz-pref("parfait.traffic-lights.enabled")) {
+      #TabsToolbar > .titlebar-buttonbox-container {
+        position: absolute;
+        right: 0;
+        min-height: var(--pf-navbar-height);
+      }
+    }
     /* hl: toolbar item positioning */
-    @media -moz-pref("parfait.traffic-lights.enabled") or (-moz-platform: macos) {
+    @media -moz-pref("parfait.traffic-lights.enabled") or (-moz-platform: macos) or ((-moz-platform: linux) and (-moz-gtk-csd-reversed-placement)) {
       #nav-bar > .titlebar-buttonbox-container {
         display: flex !important;
       }
@@ -237,44 +248,28 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
         display: none !important;
       }
     }
-    @media -moz-pref("parfait.traffic-lights.enabled") or -moz-pref("parfait.toolbar.force-hl-layout") or (not (-moz-platform: linux)) {
-      --pf-tabbar-margin: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-navbar-items, 2) + var(--pf-separation));
-      --pf-extensions-x: calc((var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap)) * var(--pf-extensions-multi, 1) + var(--pf-separation) + var(--pf-wc-width));
-
-      #TabsToolbar > .toolbar-items {
-        margin-right: var(--pf-tabbar-margin) !important;
-      }
-      #PanelUI-button {
-        position: fixed;
-        right: var(--pf-wc-width);
-      }
-      &:not([customizing]) #unified-extensions-button,
-      #wrapper-unified-extensions-button {
-        position: fixed;
-        right: var(--pf-extensions-x);
-      }
-      #nav-bar-overflow-button {
-        position: fixed;
-        right: calc(var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap) + var(--pf-separation) + var(--pf-wc-width));
-      }
-      &:has(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) #unified-extensions-button[hidden]) {
-        --pf-navbar-items: 1;
-      }
-      &:has(#nav-bar:is([overflowing], [nonemptyoverflow], [customizing]) #unified-extensions-button:not([hidden])) {
-        --pf-navbar-items: 3;
-        --pf-extensions-multi: 2;
-      }
+    #TabsToolbar > .toolbar-items {
+      margin-right: var(--pf-tabbar-margin) !important;
     }
-    @media (-moz-platform: linux) and (not -moz-pref("parfait.toolbar.force-hl-layout")) {
-      #PanelUI-button,
-      #unified-extensions-button {
-        order: -1 !important;
-      }
-      @media not -moz-pref("parfait.traffic-lights.enabled") {
-        #PanelUI-menu-button {
-          --toolbar-start-end-padding: var(--pf-toolbaritem-gap);
-        }
-      }
+    #PanelUI-button {
+      position: fixed;
+      right: var(--pf-wc-width);
+    }
+    &:not([customizing]) #unified-extensions-button,
+    #wrapper-unified-extensions-button {
+      position: fixed;
+      right: var(--pf-extensions-x);
+    }
+    #nav-bar-overflow-button {
+      position: fixed;
+      right: calc(var(--pf-toolbaritem-size) + var(--pf-toolbaritem-gap) + var(--pf-separation) + var(--pf-wc-width));
+    }
+    &:has(#nav-bar:not([overflowing], [nonemptyoverflow], [customizing]) #unified-extensions-button[hidden]) {
+      --pf-navbar-items: 1;
+    }
+    &:has(#nav-bar:is([overflowing], [nonemptyoverflow], [customizing]) #unified-extensions-button:not([hidden])) {
+      --pf-navbar-items: 3;
+      --pf-extensions-multi: 2;
     }
     /* hl: breakpoints */
     @media (max-width: 600px) {

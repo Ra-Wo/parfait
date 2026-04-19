@@ -176,6 +176,31 @@
     --pf-tl-size: 14px;
     --pf-tl-margin: -8px;
   }
+  /* csd: linux */
+  @media (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (not -moz-pref("parfait.traffic-lights.enabled")) {
+    --pf-wc-close-width: 40px;
+    --pf-wc-minmax-width: 37px;
+    --pf-wc-minmax-num: 0;
+    --pf-wc-width: calc(var(--pf-wc-close-width) + (var(--pf-wc-minmax-width) * var(--pf-wc-minmax-num)));
+
+    @media (-moz-gtk-csd-maximize-button) or (-moz-gtk-csd-minimize-button) {
+      --pf-wc-minmax-num: 1;
+    }
+    @media (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-minimize-button) {
+      --pf-wc-minmax-num: 2;
+    }
+    @media (-moz-gtk-csd-reversed-placement) {
+      --pf-wc-width: 0px;
+    }
+    @media (-moz-gtk-theme-family: breeze) {
+      --pf-wc-close-width: 30px;
+      --pf-wc-minmax-width: 27px;
+    }
+  }
+  /* system titlebar */
+  &:not([customtitlebar]) {
+    --pf-wc-width: 0px;
+  }
 
   /* borderless */
   @media -moz-pref("parfait.window.borderless") {
