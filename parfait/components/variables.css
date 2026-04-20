@@ -37,7 +37,7 @@
   --pf-urlbar-sr-radius: 8px;
   --pf-favicon-radius: 4px;
   --pf-window-radius: 12px;
-  --pf-browser-radius: max(5px, calc(var(--pf-window-radius) - (var(--pf-separation) / 2)));
+  --pf-browser-radius: max(4px, calc(var(--pf-window-radius) - (var(--pf-separation) / 2)));
 
   /* colors */
   --pf-accent-color: AccentColor;

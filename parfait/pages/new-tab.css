@@ -85,7 +85,7 @@
     position: unset !important;
     width: 40px !important;
     height: 40px !important;
-    border-radius: 0 !important;
+    border-radius: calc(var(--border-radius-small) / 2) !important;
   }
   .top-site-outer .tile .top-site-icon[style^='background-image: url("moz-page-thumb://']::before {
     background-image: linear-gradient(rgba(255, 255, 255, 0.15), transparent);

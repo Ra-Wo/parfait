@@ -122,6 +122,9 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
       left: 0;
       z-index: 1;
     }
+    :root:not([customtitlebar]) #navigator-toolbox[tabs-hidden] & {
+      display: flex !important;
+    }
   }
   /* keep toolbar items on top of vertical spacer */
   #nav-bar-customization-target > :is(toolbarbutton, toolbaritem) {
@@ -203,6 +206,10 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
     #nav-bar {
       width: fit-content;
       grid-area: 1 / 1;
+
+      &:-moz-window-inactive {
+        opacity: var(--inactive-titlebar-opacity);
+      }
     }
     #PersonalToolbar {
       grid-row: 2;
@@ -217,6 +224,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
     }
     #urlbar-container {
       --urlbar-container-min-width: 200px;
+      --urlbar-margin-inline: 4px;
     }
     #urlbar-container + #downloads-button,
     #urlbar-container + toolbarspring + #downloads-button {
