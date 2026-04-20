@@ -193,6 +193,27 @@
 #pageAction-urlbar-_testpilot-containers {
   --pageAction-image: var(--pf-icon-container-open) !important;
 }
+.searchmode-switcher-icon[style*="tabs.svg"] {
+  list-style-image: var(--pf-icon-tabs) !important;
+}
+.searchmode-switcher-icon[style*="bookmark.svg"] {
+  list-style-image: url("chrome://browser/skin/bookmark-hollow.svg") !important;
+}
+.searchmode-switcher-icon[style*="quickactions.svg"] {
+  list-style-image: url("chrome://browser/skin/trending.svg") !important;
+}
+.urlbarView-favicon[src="chrome://browser/skin/bookmark.svg"],
+#search-button-bookmarks > .menu-icon {
+  content: url("chrome://browser/skin/bookmark-hollow.svg") !important;
+}
+.urlbarView-favicon[src="chrome://browser/skin/tabs.svg"],
+#search-button-tabs > .menu-icon {
+  content: var(--pf-icon-tabs) !important;
+}
+.urlbarView-favicon[src="chrome://browser/skin/quickactions.svg"],
+#search-button-actions > .menu-icon {
+  content: url("chrome://browser/skin/trending.svg") !important;
+}
 
 /* tabs */
 .tab-icon-image[src="chrome://browser/skin/controlcenter/dashboard.svg"] {

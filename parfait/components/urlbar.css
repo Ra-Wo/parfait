@@ -82,13 +82,10 @@
     .urlbar-input-box {
       padding-left: 10px;
     }
-    &[pageproxystate="invalid"] {
-      .urlbar-input-box {
-        padding-left: 4px;
-      }
-      #urlbar-input {
-        text-overflow: ellipsis;
-      }
+    &[pageproxystate="invalid"] .urlbar-input-box {
+      padding-left: 4px;
+      margin-right: 5px;
+      mask-image: linear-gradient(to left, transparent, #000 1em);
     }
     .urlbar-go-button,
     .search-go-button {
@@ -391,12 +388,6 @@
     &[src="chrome://global/skin/icons/edit-copy.svg"] {
       content: var(--pf-icon-copy);
     }
-    &[src="chrome://browser/skin/bookmark.svg"] {
-      content: url(chrome://browser/skin/bookmark-hollow.svg);
-    }
-    &[src="chrome://browser/skin/tabs.svg"] {
-      content: var(--pf-icon-tabs);
-    }
   }
   .urlbarView-button {
     margin-inline-end: 12px !important;
@@ -454,54 +445,25 @@
 /* search mode switcher */
 #urlbar-searchmode-switcher {
   margin: 2px 0 2px 2px !important;
-  padding: var(--urlbar-searchmodeswitcher-inline-padding) !important;
   --urlbar-box-bgcolor: transparent;
   --urlbar-box-focus-bgcolor: transparent;
 
-  .urlbar:not([searchmode]) &:is(:hover, [open]) {
+  &:is(:hover, [open]) {
     background-color: var(--pf-toolbar-bgcolor-hover) !important;
   }
   .searchmode-switcher-icon {
+    border-radius: var(--pf-favicon-radius);
+    fill-opacity: 0.5;
+    -moz-context-properties: fill, fill-opacity !important;
+  }
+  .urlbar:not([searchmode]) & .searchmode-switcher-icon {
     list-style-image: var(--pf-icon-search) !important;
-    opacity: 0.5;
   }
-  .searchmode-switcher-title {
-    color: var(--pf-text-color) !important;
-    font-size: 12px;
-    font-weight: 600;
-    --urlbar-searchmodeswitcher-inline-padding: 0;
-
-    #urlbar[open] & {
-      font-size: var(--pf-font-size-1);
-    }
+  .searchmode-switcher-close,
+  .searchmode-switcher-title,
+  .searchmode-switcher-dropmarker {
+    display: none !important;
   }
-  .searchmode-switcher-close {
-    width: 0 !important;
-    padding: 0 !important;
-    margin-inline: 0 !important;
-    opacity: 0;
-    transition: var(--pf-ts-15);
-  }
-  &:hover .searchmode-switcher-close {
-    width: var(--icon-size) !important;
-    margin-inline: 4px -4px !important;
-    opacity: 1;
-  }
-  .urlbar[searchmode] & {
-    padding-inline: 8px !important;
-    --urlbar-box-bgcolor: color-mix(in srgb, var(--pf-accent-color), var(--toolbar-bgcolor) 40%);
-    --urlbar-box-focus-bgcolor: var(--urlbar-box-bgcolor);
-    --urlbar-inner-border-radius: 99px;
-
-    #urlbar[open] & {
-      padding-inline: 12px !important;
-    }
-    #urlbar:not([open]) & {
-      margin-block: 3px !important;
-    }
-    .searchmode-switcher-icon { display: none; }
-  }
-  .searchmode-switcher-dropmarker { display: none; }
 }
 /* fu: search mode glow */
 @keyframes searchbar {
