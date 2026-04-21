@@ -31,9 +31,6 @@ user_pref("parfait.tabs.groups.color", false);
 /* sidebar */
 user_pref("parfait.sidebar.width.preset", 2);
 
-/* theme */
-user_pref("parfait.theme.lwt.alt", false);
-
 /* toolbar */
 user_pref("parfait.toolbar.sidebar-gutter", true);
 user_pref("parfait.toolbar.unified-sidebar", true);
