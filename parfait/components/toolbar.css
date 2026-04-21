@@ -43,6 +43,10 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     }
   }
 }
+#ipprotection-button:not([overflowedItem="true"], [cui-areatype="panel"]) {
+  min-width: unset !important;
+  max-width: unset !important;
+}
 .private-browsing-indicator-with-label,
 #fxa-avatar-label {
   display: none;
