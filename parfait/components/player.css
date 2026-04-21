@@ -102,7 +102,7 @@
     padding: 0 10px !important;
     grid-area: unset !important;
   }
-  /* yabai */
+  /* yabai
   @media -moz-pref("parfait.blur.enabled") {
     #close, #unpip,
     .center-controls .control-button,
@@ -113,6 +113,7 @@
       clip-path: inset(0 round 0.01px) !important;
     }
   }
+  */
   /* scrubbers */
   #scrubber,
   #audio-scrubber {

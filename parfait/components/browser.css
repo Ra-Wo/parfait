@@ -73,9 +73,11 @@
       --pf-browser-radius: 0;
       --pf-browser-separation: 0px;
     }
+    /*
     @media -moz-pref("parfait.blur.enabled") {
       browser:not(.devtools-toolbox-bottom-iframe, .devtools-toolbox-side-iframe) { clip-path: inset(0 round 0.01px); }
     }
+    */
   }
   .browserContainer {
     border-radius: var(--pf-browser-radius) !important;
