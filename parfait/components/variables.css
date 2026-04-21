@@ -69,6 +69,7 @@
 
   /* shadows */
   --pf-tab-selected-shadow: 0 0 1px rgba(0, 0, 0, 0.075), 0 1px 1px 1px rgba(0, 0, 0, 0.09);
+  --pf-browser-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), #000);
   --pf-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --pf-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.075), 0 24px 48px rgba(0, 0, 0, 0.175);
@@ -238,8 +239,9 @@
   --border-radius-medium: var(--pf-border-radius-md) !important;
   --urlbar-icon-border-radius: var(--pf-border-radius-sm) !important;
 
-  --chrome-content-separator-color: transparent !important;
-  --sidebar-border-color: transparent !important;
+  --content-area-shadow: var(--pf-browser-shadow) !important;
+  --chrome-content-separator-color: var(--pf-toolbar-bgcolor) !important;
+  --sidebar-border-color: var(--pf-toolbar-bgcolor) !important;
   --background-color-overlay: transparent !important;
   --background-color-canvas: var(--pf-panel-bgcolor) !important;
   --urlbar-box-bgcolor: transparent !important;

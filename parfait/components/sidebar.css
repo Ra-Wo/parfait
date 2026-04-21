@@ -93,13 +93,6 @@
 #sidebar-splitter {
   padding-block-end: var(--pf-browser-separation) !important;
   --border-radius-medium: var(--pf-browser-radius);
-
-  @media -moz-pref("parfait.window.borderless") {
-    --pf-browser-separation: 0px;
-    --pf-browser-radius: 0;
-    --space-medium: 4px;
-    --content-area-shadow: none;
-  }
 }
 #sidebar-splitter {
   width: var(--pf-browser-separation) !important;

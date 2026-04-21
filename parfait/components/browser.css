@@ -67,17 +67,20 @@
         margin-inline: var(--pf-browser-separation) !important;
       }
     }
-    @media -moz-pref("parfait.window.borderless") {
-      --chrome-content-separator-color: var(--pf-toolbar-bgcolor);
-      --content-area-shadow: none;
-      --pf-browser-radius: 0;
-      --pf-browser-separation: 0px;
-    }
     /*
     @media -moz-pref("parfait.blur.enabled") {
       browser:not(.devtools-toolbox-bottom-iframe, .devtools-toolbox-side-iframe) { clip-path: inset(0 round 0.01px); }
     }
     */
+  }
+  @media -moz-pref("parfait.window.borderless") {
+    #tabbrowser-tabbox,
+    #sidebar-splitter,
+    #sidebar-box {
+      --content-area-shadow: none;
+      --pf-browser-radius: 0;
+      --pf-browser-separation: 0px;
+    }
   }
   .browserContainer {
     border-radius: var(--pf-browser-radius) !important;
@@ -94,6 +97,8 @@
     .split-view-panel {
       margin: 0 !important;
       overflow: unset !important;
+      --border-width: 0.5px;
+      --border-color: var(--chrome-content-separator-color);
 
       &[column="1"]::after {
         content: "";
@@ -107,7 +112,6 @@
         pointer-events: none;
         transition: background-color var(--pf-ts-15);
       }
-      &:not(.deck-selected) > .browserContainer { outline: none !important; }
       &.deck-selected > .browserContainer { outline-color: var(--pf-split-border-color, var(--pf-accent-color)) !important; }
     }
     &:has(.split-view-splitter:hover) {
