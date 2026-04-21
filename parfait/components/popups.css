@@ -165,6 +165,8 @@ panel toolbarseparator {
 
 /* manage tab group */
 .tab-group-editor-panel {
+  --arrowpanel-menuitem-margin: 2px 12px;
+
   .panel-header {
     gap: 8px;
     text-align: left !important;
@@ -179,6 +181,8 @@ panel toolbarseparator {
     }
   }
   .tab-group-editor-name {
+    --arrowpanel-menuitem-padding-block: 0;
+
     & > label {
       color: var(--pf-text-color-inactive);
       font-weight: 600;
@@ -187,9 +191,6 @@ panel toolbarseparator {
       --input-border-color: var(--pf-border-color);
       --input-bgcolor: var(--pf-input-bgcolor);
     }
-  }
-  .panel-body.tab-group-editor-swatches {
-    --space-medium: 2px;
   }
   .tab-group-editor-swatch {
     --border-radius-medium: 99px;
@@ -213,8 +214,20 @@ panel toolbarseparator {
     margin-inline: calc(0px - var(--panel-padding));
     --panel-separator-color: var(--pf-border-color-light);
   }
+  .panel-header,
+  .tab-group-edit-actions {
+    margin: var(--arrowpanel-menuitem-margin);
+  }
   .tab-group-edit-actions + toolbarseparator {
     display: none !important;
+  }
+  #tab-group-suggestion-button {
+    margin: 8px var(--arrowpanel-menuitem-margin-inline) 0 !important;
+  }
+  #tab-group-suggestions-container,
+  #tab-group-suggestions-optin-container {
+    margin: 0 !important;
+    padding-inline: var(--arrowpanel-menuitem-padding-inline) !important;
   }
 }
 /* mtg: suggested tabs */

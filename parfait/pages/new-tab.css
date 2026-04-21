@@ -24,6 +24,10 @@
     --border-radius-small: 8px !important;
     --border-radius-medium: 12px !important;
 
+    --button-font-size: 14px !important;
+    --button-font-weight: 500 !important;
+    --button-border-radius: var(--border-radius-small) !important;
+
     @media -moz-pref("parfait.animations.enabled", false) or (prefers-reduced-motion: reduce) { --pf-ts-25: 0s; }
   }
   @media (-moz-platform: windows) {
@@ -192,7 +196,6 @@
     --border-color: var(--pf-border-color);
   }
   .home-section .section .selector {
-    font-family: inherit;
     margin-left: 12px !important;
   }
   /* wallpaper */
@@ -364,6 +367,7 @@
     min-width: 220px;
     margin-block-start: 0 !important;
     border: 1px solid var(--pf-border-color);
+    color-scheme: light dark !important;
   }
   .fields-and-preview .top-site-outer .top-site-button {
     text-decoration: none !important;
@@ -372,10 +376,6 @@
   .topsite-form .actions > moz-button-group {
     width: 100%;
     justify-content: space-between !important;
-  }
-  .topsite-form .actions > moz-button-group > moz-button {
-    --button-border-radius: var(--border-radius-small);
-    --button-font-size: 14px;
   }
   /* weather */
   .weatherCard {
