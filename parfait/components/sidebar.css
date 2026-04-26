@@ -256,7 +256,6 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
           --pf-sidebar-bgcolor: linear-gradient(var(--pf-bg-gradient-fade), var(--pf-browser-bgcolor));
         }
       }
-      /*
       @media -moz-pref("parfait.blur.enabled") {
         backdrop-filter: var(--pf-acrylic-filter);
         --pf-sidebar-bgcolor-1: color-mix(in srgb, var(--pf-sidebar-bgcolor), transparent 12%);
@@ -265,7 +264,6 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
           --pf-sidebar-bgcolor-1: linear-gradient(color-mix(in srgb, var(--pf-bg-gradient-fade), transparent 20%), color-mix(in srgb, var(--pf-browser-bgcolor), transparent 20%));
         }
       }
-      */
       /* fs: sidebar trigger point */
       &::before,
       &::after {

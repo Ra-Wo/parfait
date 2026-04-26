@@ -67,11 +67,12 @@
         margin-inline: var(--pf-browser-separation) !important;
       }
     }
-    /*
     @media -moz-pref("parfait.blur.enabled") {
-      browser:not(.devtools-toolbox-bottom-iframe, .devtools-toolbox-side-iframe) { clip-path: inset(0 round 0.01px); }
+      browser:not(.devtools-toolbox-bottom-iframe, .devtools-toolbox-side-iframe) {
+        backface-visibility: hidden;
+        translate: 0;
+      }
     }
-    */
   }
   @media -moz-pref("parfait.window.borderless") {
     #tabbrowser-tabbox,

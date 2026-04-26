@@ -47,11 +47,10 @@
       }
     }
   }
-  /* unholy workaround
+  /* unholy workaround */
   @media -moz-pref("sidebar.verticalTabs") and -moz-pref("parfait.blur.enabled") {
     #urlbar { will-change: unset !important; }
   }
-  */
   #urlbar:not([open]) {
     --urlbar-inner-border-radius: max(var(--pf-border-radius-sm), calc(var(--pf-border-radius-md) - 3px));
 
@@ -118,12 +117,10 @@
       transition: none !important;
       --toolbar-field-focus-background-color: var(--pf-urlbar-bgcolor);
     }
-    /*
     @media -moz-pref("parfait.blur.enabled") {
       --pf-urlbar-fl-blur: var(--pf-acrylic-filter);
       --pf-urlbar-bgcolor: var(--pf-urlbar-bgcolor-transparent);
     }
-    */
     & > .urlbar-input-container {
       padding-inline: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2 + var(--urlbar-container-padding)) !important;
       --urlbar-container-height: var(--pf-urlbar-input-height);

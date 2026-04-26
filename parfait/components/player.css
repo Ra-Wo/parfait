@@ -102,7 +102,7 @@
     padding: 0 10px !important;
     grid-area: unset !important;
   }
-  /* yabai
+  /* yabai */
   @media -moz-pref("parfait.blur.enabled") {
     #close, #unpip,
     .center-controls .control-button,
@@ -110,10 +110,10 @@
       backdrop-filter: var(--pf-background-filter);
     }
     .player-holder > #browser {
-      clip-path: inset(0 round 0.01px) !important;
+      backface-visibility: hidden;
+      translate: 0;
     }
   }
-  */
   /* scrubbers */
   #scrubber,
   #audio-scrubber {
