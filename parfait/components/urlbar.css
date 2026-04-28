@@ -66,7 +66,8 @@
       width: 0 !important;
       padding-inline: 0 !important;
       opacity: 0;
-      transition: var(--pf-ts-15) !important;
+      transition-property: width, padding, opacity !important;
+      transition-duration: var(--pf-ts-15) !important;
 
       #urlbar:hover & {
         width: calc(var(--urlbar-min-height) - 2px - 2 * var(--urlbar-container-padding)) !important;
