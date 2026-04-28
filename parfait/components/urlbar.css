@@ -62,7 +62,7 @@
       visibility: collapse;
     }
     /* page actions */
-    .urlbar-page-action:not([open], [translationsactive]) {
+    .urlbar-page-action:not([open], #translations-button[translationsactive], #reader-mode-button[readeractive]) {
       width: 0 !important;
       padding-inline: 0 !important;
       opacity: 0;
@@ -398,7 +398,7 @@
   }
 }
 /* urlbar icons */
-.urlbar-icon:not(#star-button[starred]),
+.urlbar-icon,
 #identity-box,
 #trust-icon-container,
 #notification-popup-box,
@@ -406,6 +406,10 @@
   fill: var(--pf-icon-color) !important;
   filter: unset !important;
   --urlbar-icon-fill-opacity: 1;
+}
+#star-button[starred],
+#reader-mode-button[readeractive] {
+  --pf-icon-color: var(--toolbarbutton-icon-fill-attention);
 }
 #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, a.extensionPage) > .identity-box-button {
   padding-inline: var(--urlbar-icon-padding) !important;
