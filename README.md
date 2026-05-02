@@ -15,6 +15,19 @@
   <img width="968" src="https://github.com/user-attachments/assets/72efa90e-bee8-48e9-83d7-a3a8e07e9cd2" alt="Demonstration of the Parfait theme showcasing its features">
 </p>
 
+## Installation
+
+1. In Firefox, type and enter `about:support` in the address bar.
+2. Scroll down to the **Profile Folder** section and click **Open Folder**.
+3. In your profile folder, right-click on an empty area to open the profile folder in the terminal.
+
+And follow the commands below based on your operating system:
+
+```powershell
+git clone https://github.com/ra-wo/parfait.git chrome --depth 1
+Move-Item chrome/user.js .
+```
+
 ## Getting started
 
 ### [📕 Parfait Wiki](https://github.com/reizumii/parfait/wiki)
